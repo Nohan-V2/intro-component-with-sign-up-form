@@ -45,6 +45,8 @@ body {
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    align-items: center;
+    gap: 44px;
   }
 }
 
@@ -56,6 +58,7 @@ body {
 
   @media screen and (min-width: 768px) {
     width: 50%;
+    gap: 24px;
   }
 
   h1 {
@@ -65,6 +68,16 @@ body {
     line-height: 36px;
     letter-spacing: -0.29px;
     text-align: center;
+
+    @media screen and (min-width: 768px) {
+      text-align: left;
+
+      font-family: Poppins;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 55px;
+      letter-spacing: -0.52px;
+    }
   }
 
   p {
@@ -74,6 +87,10 @@ body {
     line-height: 26px;
     letter-spacing: 0px;
     text-align: center;
+
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
   }
 }
 
@@ -107,6 +124,9 @@ body {
 }
 
 form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding: 24px;
   background: #ffffff;
   box-shadow: 0px 8px 0px 0px #00000025;
@@ -118,19 +138,74 @@ form {
     gap: 6px;
   }
 
+  .input-container {
+    position: relative;
+  }
+
   input {
+    border-radius: 5px;
+    padding: 16px 20px;
+    width: 100%;
     background: #ffffff;
     border: 1px solid #dedede;
+    color: var(--tuna);
+    outline: none;
+
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0.25px;
 
     &::placeholder {
       color: var(--tuna);
       opacity: 75%;
     }
+
+    &:focus {
+      border-color: var(--butterfly-bush);
+    }
+  }
+
+  .error-input {
+    color: var(--salmon);
+    border-color: var(--salmon);
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    translate: 0 -50%;
+  }
+
+  .error-text {
+    color: var(--salmon);
+    font-family: Poppins;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: right;
   }
 
   button {
+    cursor: pointer;
+    padding: 16px 0;
     background: var(--shamrock);
     box-shadow: 0px -4px 0px 0px #00000017 inset;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0px;
 
     &:hover {
       background: #77e2b3;
@@ -138,6 +213,7 @@ form {
   }
 
   p {
+    margin-top: -8px;
     color: #bab7d4;
     font-family: Poppins;
     font-weight: 500;
@@ -153,16 +229,5 @@ form {
         color: var(--salmon);
       }
     }
-  }
-}
-
-.error-class {
-  input {
-    color: var(--salmon);
-    border-color: var(--salmon);
-  }
-
-  .error-text {
-    color: var(--salmon);
   }
 }
